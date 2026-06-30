@@ -48,7 +48,7 @@ jobs:
 
       - name: Cache Playwright browsers
         if: ${{ hashFiles('playwright.config.*') != '' || hashFiles('.playwright-mcp/**') != '' }}
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: ~/.cache/ms-playwright
           key: ${{ runner.os }}-playwright-${{ hashFiles('playwright.config.*', '.playwright-mcp/**') }}
@@ -107,7 +107,7 @@ jobs:
 
       # ---------- Optional caches ----------
       - name: Cache Next.js build artifacts
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: |
             ~/.npm
